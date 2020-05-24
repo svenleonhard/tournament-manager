@@ -1,0 +1,23 @@
+{
+  "tournamentManagerApp": {
+    "gamePlan": {
+      "home": {
+        "title": "Game Plans",
+        "createLabel": "Create a new Game Plan",
+        "createOrEditLabel": "Create or edit a Game Plan",
+        "notFound": "No Game Plans found"
+      },
+      "created": "A new Game Plan is created with identifier {{ param }}",
+      "updated": "A Game Plan is updated with identifier {{ param }}",
+      "deleted": "A Game Plan is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Game Plan {{ id }}?"
+      },
+      "detail": {
+        "title": "Game Plan"
+      },
+      "gameMode": "Game Mode",
+      "game": "Game"
+    }
+  }
+}

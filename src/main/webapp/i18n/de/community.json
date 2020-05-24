@@ -1,0 +1,24 @@
+{
+  "tournamentManagerApp": {
+    "community": {
+      "home": {
+        "title": "Communities",
+        "createLabel": "Community erstellen",
+        "createOrEditLabel": "Community erstellen oder bearbeiten",
+        "notFound": "No Communities found"
+      },
+      "created": "Community erstellt mit ID {{ param }}",
+      "updated": "Community aktualisiert mit ID {{ param }}",
+      "deleted": "Community gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Community {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Community"
+      },
+      "name": "Name",
+      "team": "Team",
+      "tournament": "Tournament"
+    }
+  }
+}

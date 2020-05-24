@@ -1,0 +1,75 @@
+entity Tournament {
+    tournamentName String unique,
+    date LocalDate,
+    location String
+}
+
+entity Community {
+	name String unique
+}
+
+entity Team {
+    teamName String unique,
+    playersAmount Integer
+}
+
+entity Hall {
+	hallName String unique
+}
+
+entity Game {
+    duration Integer,
+    state GameState,
+    startTime ZonedDateTime,
+    team1 String,
+    team2 String,
+    gameType GameType
+}
+
+entity Score {
+    goalsTeam1 Integer,
+    goalsTeam2 Integer
+}
+
+entity GamePlan {
+	gameMode Mode
+}
+
+enum Mode {
+    KONFICUP
+}
+
+enum GameState {
+	PLANNED, RUNNING, CANCELED, FINISHED
+}
+
+enum GameType {
+     GROUP, SIXTEENTH, EIGTH, QUARTER, HALF, FINAL
+}
+
+
+relationship ManyToMany {
+	Tournament to Community
+}
+
+relationship OneToMany {
+    Community to Team{community},
+    GamePlan to Game{gamePlan}
+}
+
+relationship OneToOne {
+    Game{hall} to Hall
+    Game{score} to Score
+}
+
+// Set pagination options
+//paginate Job with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

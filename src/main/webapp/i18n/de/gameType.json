@@ -1,0 +1,13 @@
+{
+  "tournamentManagerApp": {
+    "GameType": {
+      "null": "",
+      "GROUP": "GROUP",
+      "SIXTEENTH": "SIXTEENTH",
+      "EIGTH": "EIGTH",
+      "QUARTER": "QUARTER",
+      "HALF": "HALF",
+      "FINAL": "FINAL"
+    }
+  }
+}

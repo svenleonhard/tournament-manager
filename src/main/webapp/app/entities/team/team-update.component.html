@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-team-heading" jhiTranslate="tournamentManagerApp.team.home.createOrEditLabel">Create or edit a Team</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tournamentManagerApp.team.teamName" for="field_teamName">Team Name</label>
+                    <input type="text" class="form-control" name="teamName" id="field_teamName"
+                           formControlName="teamName"/>
+                    <div *ngIf="editForm.get('teamName')!.invalid && (editForm.get('teamName')!.dirty || editForm.get('teamName')!.touched)">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tournamentManagerApp.team.playersAmount" for="field_playersAmount">Players Amount</label>
+                    <input type="number" class="form-control" name="playersAmount" id="field_playersAmount"
+                           formControlName="playersAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tournamentManagerApp.team.community" for="field_community">Community</label>
+                    <select class="form-control" id="field_community" name="community" formControlName="community">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="communityOption.id === editForm.get('community')!.value?.id ? editForm.get('community')!.value : communityOption" *ngFor="let communityOption of communities; trackBy: trackById">{{ communityOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

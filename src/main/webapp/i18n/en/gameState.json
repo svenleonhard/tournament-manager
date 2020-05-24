@@ -1,0 +1,11 @@
+{
+  "tournamentManagerApp": {
+    "GameState": {
+      "null": "",
+      "PLANNED": "PLANNED",
+      "RUNNING": "RUNNING",
+      "CANCELED": "CANCELED",
+      "FINISHED": "FINISHED"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Score",
+  "fields": [
+    {
+      "fieldName": "goalsTeam1",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "goalsTeam2",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20200524161840",
+  "entityTableName": "score",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

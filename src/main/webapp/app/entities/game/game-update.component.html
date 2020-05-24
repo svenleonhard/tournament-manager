@@ -1,0 +1,97 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-game-heading" jhiTranslate="tournamentManagerApp.game.home.createOrEditLabel">Create or edit a Game</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tournamentManagerApp.game.duration" for="field_duration">Duration</label>
+                    <input type="number" class="form-control" name="duration" id="field_duration"
+                           formControlName="duration"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tournamentManagerApp.game.state" for="field_state">State</label>
+                    <select class="form-control" name="state" formControlName="state" id="field_state">
+                        <option value="PLANNED">{{ 'tournamentManagerApp.GameState.PLANNED' | translate }}</option>
+                        <option value="RUNNING">{{ 'tournamentManagerApp.GameState.RUNNING' | translate }}</option>
+                        <option value="CANCELED">{{ 'tournamentManagerApp.GameState.CANCELED' | translate }}</option>
+                        <option value="FINISHED">{{ 'tournamentManagerApp.GameState.FINISHED' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tournamentManagerApp.game.startTime" for="field_startTime">Start Time</label>
+                    <div class="d-flex">
+                        <input id="field_startTime" type="datetime-local" class="form-control" name="startTime" formControlName="startTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tournamentManagerApp.game.team1" for="field_team1">Team 1</label>
+                    <input type="text" class="form-control" name="team1" id="field_team1"
+                           formControlName="team1"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tournamentManagerApp.game.team2" for="field_team2">Team 2</label>
+                    <input type="text" class="form-control" name="team2" id="field_team2"
+                           formControlName="team2"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tournamentManagerApp.game.gameType" for="field_gameType">Game Type</label>
+                    <select class="form-control" name="gameType" formControlName="gameType" id="field_gameType">
+                        <option value="GROUP">{{ 'tournamentManagerApp.GameType.GROUP' | translate }}</option>
+                        <option value="SIXTEENTH">{{ 'tournamentManagerApp.GameType.SIXTEENTH' | translate }}</option>
+                        <option value="EIGTH">{{ 'tournamentManagerApp.GameType.EIGTH' | translate }}</option>
+                        <option value="QUARTER">{{ 'tournamentManagerApp.GameType.QUARTER' | translate }}</option>
+                        <option value="HALF">{{ 'tournamentManagerApp.GameType.HALF' | translate }}</option>
+                        <option value="FINAL">{{ 'tournamentManagerApp.GameType.FINAL' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tournamentManagerApp.game.hall" for="field_hall">Hall</label>
+                    <select class="form-control" id="field_hall" name="hall" formControlName="hall">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="hallOption.id === editForm.get('hall')!.value?.id ? editForm.get('hall')!.value : hallOption" *ngFor="let hallOption of halls; trackBy: trackById">{{ hallOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tournamentManagerApp.game.score" for="field_score">Score</label>
+                    <select class="form-control" id="field_score" name="score" formControlName="score">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="scoreOption.id === editForm.get('score')!.value?.id ? editForm.get('score')!.value : scoreOption" *ngFor="let scoreOption of scores; trackBy: trackById">{{ scoreOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tournamentManagerApp.game.gamePlan" for="field_gamePlan">Game Plan</label>
+                    <select class="form-control" id="field_gamePlan" name="gamePlan" formControlName="gamePlan">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="gamePlanOption.id === editForm.get('gamePlan')!.value?.id ? editForm.get('gamePlan')!.value : gamePlanOption" *ngFor="let gamePlanOption of gameplans; trackBy: trackById">{{ gamePlanOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

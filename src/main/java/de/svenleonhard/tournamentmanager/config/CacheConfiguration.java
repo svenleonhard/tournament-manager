@@ -50,6 +50,18 @@ public class CacheConfiguration {
             createCache(cm, de.svenleonhard.tournamentmanager.domain.User.class.getName());
             createCache(cm, de.svenleonhard.tournamentmanager.domain.Authority.class.getName());
             createCache(cm, de.svenleonhard.tournamentmanager.domain.User.class.getName() + ".authorities");
+            createCache(cm, de.svenleonhard.tournamentmanager.domain.Tournament.class.getName());
+            createCache(cm, de.svenleonhard.tournamentmanager.domain.Tournament.class.getName() + ".communities");
+            createCache(cm, de.svenleonhard.tournamentmanager.domain.Community.class.getName());
+            createCache(cm, de.svenleonhard.tournamentmanager.domain.Community.class.getName() + ".teams");
+            createCache(cm, de.svenleonhard.tournamentmanager.domain.Community.class.getName() + ".tournaments");
+            createCache(cm, de.svenleonhard.tournamentmanager.domain.Team.class.getName());
+            createCache(cm, de.svenleonhard.tournamentmanager.domain.Team.class.getName() + ".games");
+            createCache(cm, de.svenleonhard.tournamentmanager.domain.Hall.class.getName());
+            createCache(cm, de.svenleonhard.tournamentmanager.domain.Game.class.getName());
+            createCache(cm, de.svenleonhard.tournamentmanager.domain.Score.class.getName());
+            createCache(cm, de.svenleonhard.tournamentmanager.domain.GamePlan.class.getName());
+            createCache(cm, de.svenleonhard.tournamentmanager.domain.GamePlan.class.getName() + ".games");
             // jhipster-needle-ehcache-add-entry
         };
     }

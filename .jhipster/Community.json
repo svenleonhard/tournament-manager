@@ -1,0 +1,39 @@
+{
+  "name": "Community",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "unique"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "team",
+      "otherEntityRelationshipName": "community",
+      "relationshipName": "team"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "tournament",
+      "otherEntityRelationshipName": "community",
+      "relationshipName": "tournament",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20200524161440",
+  "entityTableName": "community",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

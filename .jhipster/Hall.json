@@ -1,0 +1,24 @@
+{
+  "name": "Hall",
+  "fields": [
+    {
+      "fieldName": "hallName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "unique"
+      ]
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20200524161640",
+  "entityTableName": "hall",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

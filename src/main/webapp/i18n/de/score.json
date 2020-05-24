@@ -1,0 +1,23 @@
+{
+  "tournamentManagerApp": {
+    "score": {
+      "home": {
+        "title": "Scores",
+        "createLabel": "Score erstellen",
+        "createOrEditLabel": "Score erstellen oder bearbeiten",
+        "notFound": "No Scores found"
+      },
+      "created": "Score erstellt mit ID {{ param }}",
+      "updated": "Score aktualisiert mit ID {{ param }}",
+      "deleted": "Score gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Score {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Score"
+      },
+      "goalsTeam1": "Goals Team 1",
+      "goalsTeam2": "Goals Team 2"
+    }
+  }
+}

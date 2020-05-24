@@ -1,0 +1,67 @@
+{
+  "name": "Game",
+  "fields": [
+    {
+      "fieldName": "duration",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "state",
+      "fieldType": "GameState",
+      "fieldValues": "PLANNED,RUNNING,CANCELED,FINISHED"
+    },
+    {
+      "fieldName": "startTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "team1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "team2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gameType",
+      "fieldType": "GameType",
+      "fieldValues": "GROUP,SIXTEENTH,EIGTH,QUARTER,HALF,FINAL"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "hall",
+      "otherEntityRelationshipName": "game",
+      "relationshipName": "hall",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "score",
+      "otherEntityRelationshipName": "game",
+      "relationshipName": "score",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "gamePlan",
+      "otherEntityRelationshipName": "game",
+      "relationshipName": "gamePlan",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200524161740",
+  "entityTableName": "game",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

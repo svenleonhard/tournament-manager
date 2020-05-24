@@ -1,0 +1,36 @@
+{
+  "name": "Team",
+  "fields": [
+    {
+      "fieldName": "teamName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "unique"
+      ]
+    },
+    {
+      "fieldName": "playersAmount",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "community",
+      "otherEntityRelationshipName": "team",
+      "relationshipName": "community",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200524161540",
+  "entityTableName": "team",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

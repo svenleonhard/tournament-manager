@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="game">
+            <h2><span jhiTranslate="tournamentManagerApp.game.detail.title">Game</span> {{ game.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="tournamentManagerApp.game.duration">Duration</span></dt>
+                <dd>
+                    <span>{{ game.duration }}</span>
+                </dd>
+                <dt><span jhiTranslate="tournamentManagerApp.game.state">State</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'tournamentManagerApp.GameState.' + game.state }}">{{ game.state }}</span>
+                </dd>
+                <dt><span jhiTranslate="tournamentManagerApp.game.startTime">Start Time</span></dt>
+                <dd>
+                    <span>{{ game.startTime }}</span>
+                </dd>
+                <dt><span jhiTranslate="tournamentManagerApp.game.team1">Team 1</span></dt>
+                <dd>
+                    <span>{{ game.team1 }}</span>
+                </dd>
+                <dt><span jhiTranslate="tournamentManagerApp.game.team2">Team 2</span></dt>
+                <dd>
+                    <span>{{ game.team2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="tournamentManagerApp.game.gameType">Game Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'tournamentManagerApp.GameType.' + game.gameType }}">{{ game.gameType }}</span>
+                </dd>
+                <dt><span jhiTranslate="tournamentManagerApp.game.hall">Hall</span></dt>
+                <dd>
+                    <div *ngIf="game.hall">
+                        <a [routerLink]="['/hall', game.hall?.id, 'view']">{{ game.hall?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="tournamentManagerApp.game.score">Score</span></dt>
+                <dd>
+                    <div *ngIf="game.score">
+                        <a [routerLink]="['/score', game.score?.id, 'view']">{{ game.score?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="tournamentManagerApp.game.gamePlan">Game Plan</span></dt>
+                <dd>
+                    <div *ngIf="game.gamePlan">
+                        <a [routerLink]="['/game-plan', game.gamePlan?.id, 'view']">{{ game.gamePlan?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/game', game.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

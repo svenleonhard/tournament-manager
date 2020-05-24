@@ -1,0 +1,29 @@
+{
+  "name": "GamePlan",
+  "fields": [
+    {
+      "fieldName": "gameMode",
+      "fieldType": "Mode",
+      "fieldValues": "KONFICUP"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "game",
+      "otherEntityRelationshipName": "gamePlan",
+      "relationshipName": "game"
+    }
+  ],
+  "changelogDate": "20200524161940",
+  "entityTableName": "game_plan",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
